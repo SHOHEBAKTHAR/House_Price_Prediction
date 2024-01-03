@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 import numpy as np
 import pickle
 # create a flask object
-app=Flask(__name__)
+application=Flask(__name__)
 '''
 @app.route('/')
 def hello():
