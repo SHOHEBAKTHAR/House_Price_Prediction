@@ -4,12 +4,12 @@ import pickle
 # create a flask object
 application=Flask(__name__)
 '''
-@app.route('/')
+@application.route('/')
 def hello():
     """test function"""
     return "Welcome to the Flask"
 
-@app.route('/sanjay',methods=['GET'])
+@application.route('/shoheb',methods=['GET'])
 def check():
     """new function"""
     return "Codegnan is in KITS College"
@@ -17,11 +17,11 @@ def check():
 #First let's read the pickle file
 with open('House_Price.pkl','rb') as f:
     model=pickle.load(f)
-@app.route('/',methods = ['GET'])
+@application.route('/',methods = ['GET'])
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['POST'])
+@application.route('/predict',methods=['POST'])
 def predict():
     Rooms=int(request.form['bedrooms'])# python left html right
     Bathrooms=int(request.form['bathrooms'])
